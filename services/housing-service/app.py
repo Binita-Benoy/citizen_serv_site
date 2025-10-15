@@ -17,7 +17,7 @@ def create_app():
 
     @app.get("/health")
     def health():
-        return {"status": "ok", "service": "BirthCertificateService"}
+        return {"status": "ok", "service": "HousingApplicationService"}
 
     with app.app_context():
         db.create_all()
@@ -25,5 +25,4 @@ def create_app():
     return app
 
 if __name__ == "__main__":
-    app = create_app()
-    app.run(host="0.0.0.0", port=5001, debug=True)
+    create_app().run(host="0.0.0.0", port=5003, debug=True)
